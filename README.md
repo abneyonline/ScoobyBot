@@ -1,6 +1,8 @@
 # ScoobyBot
 A simple Twitter bot that posts a random frame of video from episodes of Scooby-Doo! [@Scooby_Doo_Bot](https://twitter.com/Scooby_Doo_Bot)
 
+Build requirements: opencv2 and tweepy
+
 ## Current Lexicon
 | Series | Seasons |
 |---|---|
