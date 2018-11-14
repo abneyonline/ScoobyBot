@@ -3,4 +3,5 @@
 *.mkv
 *.sh
 *.png
+*.log
 .vscode/*
