@@ -29,7 +29,7 @@ gray = cv.cvtColor(frame, 0)
 cv.imwrite('temp.png',gray)
 # Cleanup
 cap.release()
-cv.destroyAllWindows()
+#cv.destroyAllWindows()
 
 # Retrieve @BotScooby's oauth information from environment variables.
 auth = tweepy.OAuthHandler(os.environ['CONSUMER_KEY'], os.environ['CONSUMER_SECRET'])
