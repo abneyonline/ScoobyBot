@@ -10,6 +10,11 @@ Build requirements: opencv2 and tweepy
 | Scooby-Doo, Where are You! | 1,2 |
 
 ## Developer Information
+### Debug Mode
+Debug mode, that is to say, "do everything short of sending the tweet" mode, is available by supplying any command line argument to the script.
+
+### Environment Variables
+
 So as to not reveal my secret keys to the world, this bot leverages environment variables. These environment variables are hardcoded and largely self-explanatory.
 
 **CONSUMER_KEY**, **CONSUMER_SECRET**, **ACCESS_TOKEN**, **ACCESS_TOKEN_SECRET** are used to create the tweepy oauth token.
