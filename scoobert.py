@@ -1,6 +1,7 @@
 import cv2 as cv
 import tweepy
 import os
+import sys
 from numpy import sqrt, log, cos, pi, random
 
 # Set Up Media to Pull From
@@ -37,5 +38,7 @@ auth.set_access_token(os.environ['ACCESS_TOKEN'], os.environ['ACCESS_TOKEN_SECRE
 
 api = tweepy.API(auth)
 
-# print(seriesMap[series] + " " + episode[:-4])
-api.update_with_media('temp.png', seriesMap[series] + " " + episode[:-4])
+if len(sys.argv) is not 1:
+    print(seriesMap[series] + " " + episode[:-4])
+else:
+    api.update_with_media('temp.png', seriesMap[series] + " " + episode[:-4])
