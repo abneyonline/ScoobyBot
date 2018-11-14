@@ -1,14 +1,14 @@
 # ScoobyBot
-A simple Twitter bot that posts a random frame of video from episodes of Scooby-Doo!
+A simple Twitter bot that posts a random frame of video from episodes of Scooby-Doo! [@Scooby_Doo_Bot](https://twitter.com/Scooby_Doo_Bot)
 
 ## Current Lexicon
 | Series | Seasons |
 |---|---|
-| The Scooby-Doo Show! | 1,2 |
+| The Scooby-Doo Show! | 1,3 |
 | Scooby-Doo, Where are You! | 1,2 |
 
 ## Developer Information
-So as to not reveal my secret keys to the world, this bot leverages environment variables. These environment variables are implemented in code and largely self-explanatory.
+So as to not reveal my secret keys to the world, this bot leverages environment variables. These environment variables are hardcoded and largely self-explanatory.
 
 **CONSUMER_KEY**, **CONSUMER_SECRET**, **ACCESS_TOKEN**, **ACCESS_TOKEN_SECRET** are used to create the tweepy oauth token.
 
