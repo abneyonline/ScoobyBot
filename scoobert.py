@@ -41,4 +41,4 @@ api = tweepy.API(auth)
 if len(sys.argv) is not 1:
     print(seriesMap[series] + " " + episode[:-4])
 else:
-    api.update_with_media('temp.png', seriesMap[series] + " " + episode[:-4] + '#ScoobyDoo')
+    api.update_with_media('temp.png', seriesMap[series] + " " + episode[:-4] + ' #ScoobyDoo')
