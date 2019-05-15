@@ -5,14 +5,29 @@ import sys
 from numpy import sqrt, log, cos, pi, random
 
 # Set Up Media to Pull From
-seriesMap = {'WhereAreYou':'Scooby-Doo Where are You!',
-'ScoobyDooShow':'The Scooby-Doo Show'}
+seriesMap = {"Scooby-Doo, Where Are You!",
+"The 13 Ghosts of Scooby-Doo",
+"What's New Scooby-Doo!",
+"The New Scooby-Doo Movies"}
 lexicon = os.environ['SCOOBYLEXICON']
 
 # Determine Exact Episode
-series = random.choice(os.listdir(lexicon))
-episode = random.choice(os.listdir(os.path.join(lexicon, series)))
-fullPath = os.path.join(lexicon, series, episode)
+series = random.choice(tuple(seriesMap))
+seasonChoice = [name for name in os.listdir(os.path.join(lexicon, series)) if os.path.isdir(os.path.join(lexicon, series, name))]
+season = random.choice(seasonChoice)
+
+errorOut = 0
+videoFile = False
+episode = ''
+while videoFile is False and errorOut < 100:
+    episode = random.choice(os.listdir(os.path.join(lexicon, series, season)))
+    errorOut+=1
+    if '.mp4' in episode or '.mkv' in episode or '.avi' in episode:
+      videoFile = True
+if errorOut >= 100:
+    print("error finding video file")
+    sys.exit(1)
+fullPath = os.path.join(lexicon, series, season, episode)
 # fullPath = os.path.join(lexicon, 'WhereAreYou', 'S01E01 - What A Night For A Knight.mp4')
 
 # Open video file
@@ -39,6 +54,6 @@ auth.set_access_token(os.environ['ACCESS_TOKEN'], os.environ['ACCESS_TOKEN_SECRE
 api = tweepy.API(auth)
 
 if len(sys.argv) is not 1:
-    print(seriesMap[series] + " " + episode[:-4])
+    print(episode[:-4])
 else:
-    api.update_with_media('temp.png', seriesMap[series] + " " + episode[:-4] + ' #ScoobyDoo')
+    api.update_with_media('temp.png', episode[:-4] + ' #ScoobyDoo')
